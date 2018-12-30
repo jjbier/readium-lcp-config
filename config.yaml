@@ -1,0 +1,54 @@
+## License Server
+
+profile: "basic"
+lcp:
+  host: "127.0.0.1"
+  port: 8989
+  public_base_url: "http://127.0.0.1:8989"
+  database: "sqlite3://file:/workspace/lcpconfig/lcpdb/lcp.sqlite?cache=shared&mode=rwc"
+  auth_file: "/workspace/lcpconfig/htpasswd"
+storage:
+  filesystem:
+    directory: "/workspace/lcpconfig/lcpfiles/storage"
+certificate:
+  cert: "/workspace/lcpconfig/cert-edrlab-test.pem"
+  private_key: "/workspace/lcpconfig/privkey-edrlab-test.pem"
+license:
+  links:
+    status: "http://127.0.0.1:8990/licenses/{license_id}/status"
+    hint: "http://127.0.0.1:8991/static/hint.html"
+    publication: "http://127.0.0.1:8989/contents/{publication_id}"
+
+frontend:
+  host: "127.0.0.1"
+  port: 8991
+  database: "sqlite3://file:/workspace/lcpconfig/lcpdb/frontend.sqlite?cache=shared&mode=rwc"
+  master_repository: "/workspace/lcpconfig/lcpfiles/master"
+  encrypted_repository: "/workspace/lcpconfig/lcpfiles/encrypted"
+  provider_uri: "https://www.xercode.es"
+  right_print: 10
+  right_copy: 2000
+
+lsd:
+  public_base_url:  "http://127.0.0.1:8990"
+  host: "127.0.0.1"
+  port: 8990
+  database: "sqlite3://file:/workspace/lcpconfig/lcpdb/lsd.sqlite?cache=shared&mode=rwc"
+  auth_file: "/workspace/lcpconfig/htpasswd"
+  license_link_url: "http://127.0.0.1:8991/api/v1/licenses/{license_id}"
+
+license_status:
+  register: true
+  renew: true
+  return: true
+  renting_days: 60
+  renew_days: 7
+
+lsd_notify_auth:
+  username: "admin"
+  password: "admin"
+
+
+lcp_update_auth:
+  username: "admin"
+  password: "admin"

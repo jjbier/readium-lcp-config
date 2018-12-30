@@ -1,0 +1,15 @@
+[Unit]
+Description=Readium License Server API
+#After=network.target
+
+[Service]
+#Type=simple
+# Another Type option: forking
+#User=nanodano
+WorkingDirectory="$GOPATH"
+ExecStart="$GOPATH/bin/lcpserver"
+Restart=on-failure
+# Other Restart options: or always, on-abort, etc
+
+[Install]
+WantedBy=multi-user.target
