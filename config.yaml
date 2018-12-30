@@ -9,7 +9,7 @@ lcp:
   auth_file: "/workspace/lcpconfig/htpasswd"
 storage:
   filesystem:
-    directory: "/workspace/lcpconfig/lcpfiles/storage"
+    directory: "/workspace/lcpconfig/lcpfiles/encrypted"
 certificate:
   cert: "/workspace/lcpconfig/cert-edrlab-test.pem"
   private_key: "/workspace/lcpconfig/privkey-edrlab-test.pem"
@@ -18,17 +18,12 @@ license:
     status: "http://127.0.0.1:8990/licenses/{license_id}/status"
     hint: "http://127.0.0.1:8991/static/hint.html"
     publication: "http://127.0.0.1:8989/contents/{publication_id}"
+lsd_notify_auth:
+  username: "admin"
+  password: "admin"
 
-frontend:
-  host: "127.0.0.1"
-  port: 8991
-  database: "sqlite3://file:/workspace/lcpconfig/lcpdb/frontend.sqlite?cache=shared&mode=rwc"
-  master_repository: "/workspace/lcpconfig/lcpfiles/master"
-  encrypted_repository: "/workspace/lcpconfig/lcpfiles/encrypted"
-  provider_uri: "https://www.xercode.es"
-  right_print: 10
-  right_copy: 2000
 
+#License Status Server
 lsd:
   public_base_url:  "http://127.0.0.1:8990"
   host: "127.0.0.1"
@@ -43,12 +38,20 @@ license_status:
   return: true
   renting_days: 60
   renew_days: 7
-
-lsd_notify_auth:
-  username: "admin"
-  password: "admin"
-
+goofy_mode: true
 
 lcp_update_auth:
   username: "admin"
   password: "admin"
+
+##Frontend Server
+
+frontend:
+  host: "127.0.0.1"
+  port: 8991
+  database: "sqlite3://file:/workspace/lcpconfig/lcpdb/frontend.sqlite?cache=shared&mode=rwc"
+  master_repository: "/workspace/lcpconfig/lcpfiles/master"
+  encrypted_repository: "/workspace/lcpconfig/lcpfiles/encrypted"
+  provider_uri: "https://www.xercode.es"
+  right_print: 10
+  right_copy: 2000
