@@ -5,7 +5,7 @@ lcp:
   host: "127.0.0.1"
   port: 8989
   public_base_url: "http://127.0.0.1:8989"
-  database: "sqlite3://file:/workspace/lcpconfig/lcpdb/lcp.sqlite?cache=shared&mode=rwc"
+  database: "mysql://root:password=kk@tcp(localhost:3306)/readium_lcp_server"
   auth_file: "/workspace/lcpconfig/htpasswd"
 storage:
   filesystem:
@@ -28,7 +28,7 @@ lsd:
   public_base_url:  "http://127.0.0.1:8990"
   host: "127.0.0.1"
   port: 8990
-  database: "sqlite3://file:/workspace/lcpconfig/lcpdb/lsd.sqlite?cache=shared&mode=rwc"
+  database: "mysql://root:password=kk@tcp(localhost:3306)/readium_lsd_server"
   auth_file: "/workspace/lcpconfig/htpasswd"
   license_link_url: "http://127.0.0.1:8991/api/v1/licenses/{license_id}"
 
@@ -49,7 +49,7 @@ lcp_update_auth:
 frontend:
   host: "127.0.0.1"
   port: 8991
-  database: "sqlite3://file:/workspace/lcpconfig/lcpdb/frontend.sqlite?cache=shared&mode=rwc"
+  database: "mysql://root:password=kk@tcp(localhost:3306)/readium_frontend_server"
   master_repository: "/workspace/lcpconfig/lcpfiles/master"
   encrypted_repository: "/workspace/lcpconfig/lcpfiles/encrypted"
   provider_uri: "https://www.xercode.es"
