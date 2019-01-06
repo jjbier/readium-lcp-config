@@ -4,7 +4,6 @@ Configure
 ### create dirs
 ```bash
 mkdir -p /workspace/lcpconfig/lcpdb/
-mkdir -p /workspace/lcpconfig/lcpfiles/storage
 mkdir -p /workspace/lcpconfig/lcpfiles/master
 mkdir -p /workspace/lcpconfig/lcpfiles/encrypted
 ```
